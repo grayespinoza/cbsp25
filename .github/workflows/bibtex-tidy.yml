@@ -1,0 +1,19 @@
+name: bibtex-tidy
+on: [push, pull_request]
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - name: Checkout
+      uses: actions/checkout@main
+      with:
+        ref: ${{ github.head_ref }}
+    - name: Run bibtex-tidy
+      uses: grayespinoza/bibtex-tidy-action@main
+    - name: Push
+      uses: stefanzweifel/git-auto-commit-action@master
+      with:
+        commit_message: "Formatted using bibtex-tidy"
