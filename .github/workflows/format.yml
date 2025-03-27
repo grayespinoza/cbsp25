@@ -1,4 +1,4 @@
-name: bibtex-tidy
+name: Formatting
 on: [push, pull_request]
 
 jobs:
@@ -11,9 +11,11 @@ jobs:
       uses: actions/checkout@main
       with:
         ref: ${{ github.head_ref }}
+    - name: Run tex-fmt
+      uses: grayespinoza/tex-fmt-action@main
     - name: Run bibtex-tidy
       uses: grayespinoza/bibtex-tidy-action@main
     - name: Push
       uses: stefanzweifel/git-auto-commit-action@master
       with:
-        commit_message: "Formatted using bibtex-tidy"
+        commit_message: "Formatted using tex-fmt or bibtex-tidy"
