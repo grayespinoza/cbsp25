@@ -1,0 +1,103 @@
+%% Mathematical Institute, University of Oxford
+%% LaTeX Beamer Presentation Theme
+%%
+%% v1.0 Original theme: Tim Hosgood 2015 (based on department
+% PowerPoint Template)
+%% v2.0 Reimplementation: Karl Welzel May 2024 (reimplementation from
+% a standard theme)
+%% v2.1 Further adjustments and tweaks: Keith Gillow May 2024
+
+% Use infolines as base
+\useoutertheme{infolines}
+
+% tweak colours for Oxford Blue
+\definecolor{oxfordblue}{RGB}{27,27,27}
+\usecolortheme[named=oxfordblue]{structure}
+
+%turn off the navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% define useful layout lengths
+\newlength{\textmargin}
+\setlength{\textmargin}{10mm} % Left and right margin for main content
+\setbeamersize{text margin left=\textmargin,text margin right=\textmargin}
+\newlength{\titlehmargin}
+\setlength{\titlehmargin}{5mm} % Left and right margin for title and footline
+\newlength{\titlevmargin}
+\setlength{\titlevmargin}{1mm} % Top and bottom margin for title and footline
+\newlength{\fullpagewidth}
+\setlength{\fullpagewidth}{\dimexpr\textwidth+\textmargin+\textmargin\relax}
+
+% Calculate widths from heights for the logos
+\newlength{\universitylogowidth}
+\setlength{\universitylogowidth}{\dimexpr  10mm * 214 / 311 \relax}
+\newlength{\mathslogowidth}
+\setlength{\mathslogowidth}{\dimexpr 3mm * 347 / 105 \relax}
+
+%% Title slide formatting %%
+\setbeamertemplate{title page}{
+  \begin{picture}(0,0)
+    \put(-\textmargin, \dimexpr -\paperheight*6/10 \relax){%
+      \ifdim\paperwidth>400pt
+      \includegraphics[width=\paperwidth]{title-slide-background-wide.png}
+      \else
+      \includegraphics[width=\paperwidth]{title-slide-background.png}
+      \fi
+    }
+    \put(-\textmargin +7mm, -55pt){%
+      \begin{minipage}[b][4.5cm][t]{0.7\textwidth}
+        \raggedright
+        \color{white}
+        \usebeamerfont{title}
+        {\inserttitle\\[0.9cm]}
+        \usebeamerfont{subtitle}
+        {\sc\insertauthor\\[0.1cm]}
+        {\it\insertinstitute\\[0.3cm]}
+        {\insertdate}
+      \end{minipage}
+    }
+  \end{picture}
+}
+
+%% General slide header %%
+\setbeamertemplate{frametitle}{%
+  \rlap{%
+    \begin{beamercolorbox}[sep=\titlevmargin,left,wd=\dimexpr\fullpagewidth-\titlehmargin*2+\titlevmargin*2\relax]{frametitle}%
+      \begin{minipage}{\dimexpr\fullpagewidth-\universitylogowidth-\titlehmargin*3-0.1cm\relax}%
+        \strut\insertframetitle\strut\par%
+      \end{minipage}%
+      \hspace{\titlehmargin}%
+      \begin{minipage}{\dimexpr\universitylogowidth+1mm\relax}%
+        \hfill
+        \vspace*{-4mm}
+        %\includegraphics[width=\universitylogowidth]{university-logo.png}%
+      \end{minipage}%
+    \end{beamercolorbox}%
+  }%
+  \vspace{\dimexpr-\baselineskip+1ex\relax}%
+  \noindent\rlap{\hspace{-\textmargin}\hspace{\titlehmargin}\rule{\dimexpr\fullpagewidth-\titlehmargin*2\relax}{0.4pt}}%
+  \vspace{-0.6ex}%
+}
+
+%% General slide footer %%
+\setbeamertemplate{footline}{%
+  \noindent\hspace{\titlehmargin}\rule{\dimexpr\fullpagewidth-\titlehmargin*2\relax}{0.4pt}\par%
+  \vspace{\titlevmargin}%
+  \leavevmode%
+  \noindent\hspace{\dimexpr\titlehmargin-\titlevmargin\relax}%
+  \begin{beamercolorbox}[sep=\titlevmargin,wd=\dimexpr\fullpagewidth-\titlehmargin*2+\titlevmargin*2\relax]{footline}%
+    \begin{minipage}{\dimexpr\mathslogowidth+1pt\relax}%
+      \includegraphics[width=\mathslogowidth]{university-logo.png}%
+    \end{minipage}%
+    \hfill%
+    {\usebeamercolor[fg]{title in head/foot}\usebeamerfont{title in
+    head/foot}\insertshorttitle}%
+    \hfill%
+    {\usebeamercolor[fg]{date in head/foot}\usebeamerfont{date in
+    head/foot}\insertshortdate{}}%
+    \hfill%
+    {\usebeamercolor[fg]{page number in head/foot}\usebeamerfont{page
+    number in head/foot}\usebeamertemplate{page number in head/foot}}%
+  \end{beamercolorbox}
+  \vspace{\titlevmargin}%
+}
