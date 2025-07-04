@@ -12,8 +12,8 @@ with mss.mss() as sct:
     while "Screenshotting":
         last_time = time.time()
 
-        # Screenshot Monitor 2
-        img = np.array(sct.grab(sct.monitors[2]))
+        # Screenshot Monitor 1
+        img = np.array(sct.grab(sct.monitors[1]))
 
         # Display
         # cv.imshow("OpenCV/Numpy", img)
@@ -29,3 +29,5 @@ with mss.mss() as sct:
         # if cv.waitKey(25) & 0xFF == ord("q"):
         #    cv.destroyAllWindows()
         #    break
+
+        time.sleep(1)
