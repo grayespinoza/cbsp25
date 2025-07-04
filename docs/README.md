@@ -11,7 +11,7 @@ Setup Virtual Environment
 cd src/
 python -m venv mss
 source mss/bin/activate
-pip install opencv-python, mss
+pip install opencv-python mss
 ```
 
 Use Script
