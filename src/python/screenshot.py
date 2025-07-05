@@ -4,7 +4,7 @@ import numpy as np
 import os
 import time
 
-output_folder = "./mss/images"
+output_folder = "screenshots"
 os.makedirs(output_folder, exist_ok=True)
 frame_count = 0
 
@@ -15,10 +15,10 @@ with mss.mss() as sct:
         # Screenshot Monitor 1
         img = np.array(sct.grab(sct.monitors[1]))
 
-        # Display
+        # Live Display
         # cv.imshow("OpenCV/Numpy", img)
 
-        # Save
+        # Save Image
         filename = os.path.join(output_folder, f"image_{frame_count:04d}.png")
         cv.imwrite(filename, cv.cvtColor(img, cv.COLOR_BGRA2BGR))
         frame_count += 1
