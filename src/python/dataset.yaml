@@ -4,14 +4,14 @@ train: images/train
 val: images/val
 
 names:
-  0: Common_Ganado_Crossbow
-  1: Common_Ganado_Desnucado
-  2: Common_Ganado_Dynamite
-  3: Common_Ganado_Melee
-  4: Common_Ganado_Molotov
-  5: Common_Plagas_Guadana
-  6: Hazard_Tripwire_Explosive
-  7: Item_Pickup
-  8: Mini_Boss_Brute_Hammer
-  9: Mini_Boss_Chainsaw_Man
-  10: Mini_Boss_Chainsaw_Sisters
+  0: Crossbow
+  1: Desnucado
+  2: Dynamite
+  3: Melee
+  4: Molotov
+  5: Guadana
+  6: Tripwire Explosive
+  7: Pickup
+  8: Brute Hammer
+  9: Chainsaw Man
+  10: Chainsaw Sisters
