@@ -1,5 +1,5 @@
 # Cal-Bridge Summer Program 2025
-**Title:** Enhancing Accessibility Options in Resident Evil 4 using Object Tracking
+**Title:** Enhancing Accessibility Options in Resident Evil 4 using Object Detection
 
 **Abstract:**
 
