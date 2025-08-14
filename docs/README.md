@@ -9,7 +9,7 @@
 > [!IMPORTANT]
 > MSS currently does not support Wayland, use X11 when running `screenshot.py`.
 
-Setup Virtual Environment
+Set Up Virtual Environment
 ```shell
 cd src/
 python -m venv python
